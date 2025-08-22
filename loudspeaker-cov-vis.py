@@ -33,7 +33,7 @@ def calculate_spl_map(X, Y, coverage_angle_deg, rotation_deg):
     spl = 100 - 20 * np.log10(distance)
     
     #speakers direcitonal angle
-    speaker_aim_rad = np.deg2rad(rotation_deg - 90)
+    speaker_aim_rad = np.deg2rad(rotation_deg + 90)
     angle_from_center = np.arctan2(vectors[..., 1], vectors[..., 0]) - speaker_aim_rad
     angle_from_center = (angle_from_center + np.pi) % (2 * np.pi) - np.pi # Wrap to -pi, pi
     
